@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'BeBePe - Plateforme de protection')
+@section('title', 'BeBePe - Plateforme de signalement, d'accompagnement et de lutte contre l'harcellent au TOGO')
 
 @section('content')
     <!-- Hero Section Wrapper -->
