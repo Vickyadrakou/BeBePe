@@ -59,16 +59,16 @@
                             </h2>
                             <p>
                                 Les présentes Conditions Générales d'Utilisation (ci-après "CGU") régissent l'accès et l'utilisation 
-                                de la plateforme BeBePe (ci-après "la Plateforme"), accessible à l'adresse bebepe08.tg.
+                                de la plateforme BeBePe, accessible à l'adresse v.adrakou@gmail.com. 
                             </p>
                             <p>
                                 BeBePe est une plateforme dédiée à la lutte contre le harcèlement au Togo, permettant aux victimes 
-                                et témoins de signaler des cas de harcèlement de manière sécurisée et confidentielle.
+                                et témoins de signaler des cas de harcèlement de manière sécurisée et confidentielle. Elle se veut être une place d'écoute et d'accompagnement.
                             </p>
                             <div class="alert alert-info border-0 rounded-3">
                                 <i class="fas fa-info-circle me-2"></i>
                                 En accédant à la Plateforme ou en utilisant nos services, vous acceptez d'être lié par les présentes CGU. 
-                                Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser la Plateforme.
+                                Conditions nécessaires pour le bon fonctionnement de la Plateforme.
                             </div>
                         </div>
 
@@ -115,10 +115,10 @@
                             </p>
 
                             <h5 class="fw-bold mt-4">3.2 Création de compte</h5>
-                            <p>Pour créer un compte, l'Utilisateur doit :</p>
+                            <p>Pour créer un compte, l'Utilisateur s'engage à :</p>
                             <ul>
                                 <li class="mb-2">Fournir des informations exactes et complètes</li>
-                                <li class="mb-2">Être âgé d'au moins 13 ans (les mineurs doivent avoir l'autorisation de leurs parents ou tuteurs légaux)</li>
+                                <li class="mb-2">Être âgé d'au moins 13 ans (les mineurs doivent avoir l'autorisation de leurs parents, tuteurs légaux ou un adulte habileté)</li>
                                 <li class="mb-2">Choisir un mot de passe sécurisé et le garder confidentiel</li>
                                 <li class="mb-2">Accepter les présentes CGU et la Politique de Confidentialité</li>
                             </ul>
@@ -126,7 +126,7 @@
                             <h5 class="fw-bold mt-4">3.3 Responsabilité du compte</h5>
                             <p>
                                 L'Utilisateur est seul responsable de la sécurité de son compte et de toutes les activités effectuées 
-                                sous celui-ci. En cas d'utilisation non autorisée, l'Utilisateur doit nous en informer immédiatement.
+                                sous celui-ci. En cas d'utilisation non autorisée, l'Utilisateur doit nous en informer immédiatement pour des mesures à prendre.
                             </p>
                         </div>
 
@@ -275,8 +275,8 @@
                                 à la législation en vigueur.
                             </p>
                             <p>
-                                Les mineurs utilisant la Plateforme doivent avoir obtenu l'accord préalable de leurs parents 
-                                ou représentants légaux.
+                                Les mineurs utilisant la Plateforme doivent avoir obtenu l'accord préalable de leurs parents, 
+                                représentants légaux ou un adulte habileté.
                             </p>
                         </div>
 
@@ -331,8 +331,8 @@
                             <div class="bg-light p-4 rounded-3">
                                 <p class="mb-2"><i class="fas fa-building me-2" style="color: #1abc9c;"></i><strong>BeBePe - Plateforme de lutte contre le harcèlement</strong></p>
                                 <p class="mb-2"><i class="fas fa-map-marker-alt me-2" style="color: #1abc9c;"></i>Lomé, Togo</p>
-                                <p class="mb-2"><i class="fas fa-envelope me-2" style="color: #1abc9c;"></i>contact@bebepe08.tg</p>
-                                <p class="mb-0"><i class="fas fa-phone me-2" style="color: #1abc9c;"></i>+228 00 00 00 00</p>
+                                <p class="mb-2"><i class="fas fa-envelope me-2" style="color: #1abc9c;"></i>v.adrakou@gmail.com</p>
+                                <p class="mb-0"><i class="fas fa-phone me-2" style="color: #1abc9c;"></i>+228 91178479</p>
                             </div>
                         </div>
 

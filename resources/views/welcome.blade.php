@@ -198,7 +198,7 @@
             <p class="help-text">Si vous êtes en danger immédiat ou avez besoin d'une assistance urgente, n'hésitez pas à nous contacter. Nous sommes là pour vous.</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
                 <a href="#" class="btn btn-light rounded-pill px-4 py-3 fw-bold text-teal"><i class="fas fa-phone-alt me-2"></i> Appeler le 117</a>
-                <a href="#" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold"><i class="fas fa-comment-dots me-2"></i> Chat en direct</a>
+                <a href="#" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold"><i class="fas fa-phone-alt me-2"></i> Appeler le 118</a>
             </div>
         </div>
     </section>
@@ -425,7 +425,7 @@
                             </div>
                             <div class="ms-3">
                                 <h6 class="mb-0 fw-bold">Email</h6>
-                                <p class="text-muted mb-0">contact@bebepe08.tg</p>
+                                <p class="text-muted mb-0">v.adrakou@gmail.com</p>
                             </div>
                         </div>
                         
@@ -435,7 +435,7 @@
                             </div>
                             <div class="ms-3">
                                 <h6 class="mb-0 fw-bold">Téléphone</h6>
-                                <p class="text-muted mb-0">+228 00 00 00 00</p>
+                                <p class="text-muted mb-0">+228 91178479</p>
                             </div>
                         </div>
                     </div>
@@ -533,8 +533,8 @@
                 <div class="col-lg-4">
                     <h6 class="text-white fw-bold mb-3">Contactez-nous</h6>
                     <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Lomé, Togo</p>
-                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> contact@bebepe08.tg</p>
-                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 00 00 00 00</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> v.adrakou@gmail.com</p>
+                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 91178479</p>
                 </div>
             </div>
             <div class="border-top border-secondary mt-5 pt-4 text-center text-muted small">

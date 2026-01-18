@@ -58,7 +58,7 @@
                                 <i class=></i>Introduction
                             </h2>
                             <p>
-                                BeBePe (ci-après "la Plateforme") est une initiative dédiée à la lutte contre le harcèlement au Togo. 
+                                BeBePe (ci-après "la Plateforme") est une initiative dédiée à la dénonciation, à l'accompagnement, et au lutte contre toutes formes d'harcèlement au Togo. 
                                 Nous nous engageons à protéger la confidentialité et la sécurité des données personnelles de tous 
                                 nos utilisateurs, en particulier celles des victimes qui nous font confiance pour signaler des cas de harcèlement.
                             </p>
@@ -74,7 +74,7 @@
                                 <i class=></i>Données que nous collectons
                             </h2>
                             
-                            <h5> Lors de l'inscription</h5>
+                            <h5 class="fw-bold mt-4">1. Lors de l'inscription</h5>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class=></i>Nom et prénom</li>
                                 <li class="mb-2"><i class=></i>Adresse e-mail</li>
@@ -169,7 +169,7 @@
                                 <li class="mb-2"><strong>Messages de contact :</strong> 2 ans après la dernière communication</li>
                             </ul>
                         </div>
-
+ 
                         <!-- Vos droits -->
                         <div class="mb-5">
                             <h2 class="h4 fw-bold text-dark mb-3">
@@ -216,7 +216,7 @@
                             </div>
                             <p class="mt-4">
                                 Pour exercer ces droits, contactez-nous à : 
-                                <a href="mailto:contact@bebepe08.tg" class="text-primary fw-bold">contact@bebepe08.tg</a>
+                                <a href="mailto:v.adrakou@gmail.com" class="text-primary fw-bold">v.adrakou@gmail.com</a>
                             </p>
                         </div>
 
@@ -244,9 +244,9 @@
                             <p>Pour toute question concernant cette politique de confidentialité ou vos données personnelles :</p>
                             <div class="bg-light p-4 rounded-3">
                                 <p class="mb-2"><i class="fas fa-building text-primary me-2"></i><strong>BeBePe - Plateforme de lutte contre le harcèlement</strong></p>
-                                <p class="mb-2"><i class="fas fa text-primary me-2"></i>Lomé, Togo</p>
-                                <p class="mb-2"><i class="fas fa-envelope text-primary me-2"></i>contact@bebepe08.tg</p>
-                                <p class="mb-0"><i class="fas fa-phone text-primary me-2"></i>+228 00 00 00 00</p>
+                                <p class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i>Lomé, Togo</p>
+                                <p class="mb-2"><i class="fas fa-envelope text-primary me-2"></i>v.adrakou@gmail.com</p>
+                                <p class="mb-0"><i class="fas fa-phone text-primary me-2"></i>+228 91178479</p>
                             </div>
                         </div>
 
@@ -295,8 +295,8 @@
                 <div class="col-lg-4">
                     <h6 class="text-white fw-bold mb-3">Contactez-nous</h6>
                     <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Lomé, Togo</p>
-                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> contact@bebepe08.tg</p>
-                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 00 00 00 00</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> v.adrakou@gmail.com</p>
+                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 91178479</p>
                 </div>
             </div>
             <div class="border-top border-secondary mt-5 pt-4 text-center text-muted small">
