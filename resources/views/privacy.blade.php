@@ -55,53 +55,53 @@
                         <!-- Introduction -->
                         <div class="mb-5">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class=></i>Introduction
+                            
                             </h2>
                             <p>
                                 BeBePe (ci-après "la Plateforme") est une initiative dédiée à la dénonciation, à l'accompagnement, et au lutte contre toutes formes d'harcèlement au Togo. 
-                                Nous nous engageons à protéger la confidentialité et la sécurité des données personnelles de tous 
-                                nos utilisateurs, en particulier celles des victimes qui nous font confiance pour signaler des cas de harcèlement.
+                                Lorsque vous utilisez nos services, vous nous accordez votre confiance pour le traitement de vos informations. Nous savons qu'il s'agit d'une lourde responsabilité, c'est pourquoi nous nous engageons   
+                                à protéger la confidentialité et la sécurité de vos données tout en vous permettant d'en garder le contrôle, en particulier lors des signalements des cas de harcèlement.
                             </p>
                             <p>
-                                Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons 
-                                vos informations personnelles conformément aux lois togolaises en vigueur sur la protection des données.
+                                Ces règles de confidentialité vous expliquent vos informations que nous collectons et pourquoi, comment nous les utilisons, stockons et protégeons 
+                                conformément aux lois togolaises en vigueur sur la protection des données.
                             </p>
                         </div>
 
                         <!-- Données collectées -->
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
                                 <i class=></i>Données que nous collectons
                             </h2>
                             
                             <h5 class="fw-bold mt-4">1. Lors de l'inscription</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class=></i>Nom et prénom</li>
-                                <li class="mb-2"><i class=></i>Adresse e-mail</li>
-                                <li class="mb-2"><i class=></i>Mot de passe (chiffré)</li>
+                                <li class="mb-2">Nom et prénom</li>
+                                <li class="mb-2">Adresse e-mail</li>
+                                <li class="mb-2">Mot de passe (chiffré)</li>
                             </ul>
 
                             <h5 class="fw-bold mt-4">2. Lors d'un signalement</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Type de harcèlement signalé</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Description de l'incident</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Date et lieu de l'incident</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Informations sur le harceleur (si fournies)</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Preuves éventuelles (documents, captures d'écran)</li>
+                                <li class="mb-2">Type de harcèlement signalé</li>
+                                <li class="mb-2">Description de l'incident</li>
+                                <li class="mb-2">Date et lieu de l'incident</li>
+                                <li class="mb-2">Informations sur le harceleur (si fournies)</li>
+                                <li class="mb-2">Preuves éventuelles (documents, captures d'écran)</li>
                             </ul>
 
                             <h5 class="fw-bold mt-4">3. Lors d'un contact</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Nom complet</li>
-                                <li class="mb-2"><i class="fas fa-rounded-3 text-success me-2"></i>Adresse e-mail</li>
+                                <li class="mb-2">Nom complet</li>
+                                <li class="mb-2">Adresse e-mail</li>
                                 <li class="mb-2">Objet et contenu du message</li>
                             </ul>
                         </div>
 
                         <!-- Utilisation des données -->
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas fa-cogs text-primary me-2"></i>Comment nous utilisons vos données
+                                <i class="fas me-2"></i>Comment nous utilisons vos données
                             </h2>
                             <p>Vos données personnelles sont utilisées exclusivement pour :</p>
                             <ul>
@@ -120,9 +120,9 @@
                         </div>
 
                         <!-- Protection des données -->
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas fa-shield-alt text-primary me-2"></i>Protection de vos données
+                                <i class="fas me-2"></i>Protection de vos données
                             </h2>
                             <p>Nous mettons en œuvre des mesures de sécurité rigoureuses pour protéger vos informations :</p>
                             <div class="row g-3 mt-3">
@@ -158,7 +158,7 @@
                         </div>
 
                         <!-- Conservation des données -->
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
                                 <i class="fas fa-clock text-primary me-2"></i>Conservation des données
                             </h2>
@@ -171,9 +171,9 @@
                         </div>
  
                         <!-- Vos droits -->
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas fa-user-check text-primary me-2"></i>Vos droits
+                                <i class="fas me-2"></i>Vos droits
                             </h2>
                             <p>Conformément à la législation en vigueur, vous disposez des droits suivants :</p>
                             <div class="row g-3 mt-3">
@@ -221,9 +221,9 @@
                         </div>
 
                         <!-- Anonymat -->
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas fa-mask text-primary me-2"></i>Anonymat et confidentialité des signalements
+                                <i class="fas me-2"></i>Anonymat et confidentialité des signalements
                             </h2>
                             <div class="alert alert-success border-0 rounded-3">
                                 <p class="mb-0">
@@ -274,7 +274,7 @@
                         <i class="fas fa-shield-alt me-2 text-primary"></i> BeBePe
                     </a>
                     <p class="mb-4">
-                        La première plateforme digitale dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
+                        La première plateforme digitale, privée, dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
                     </p>
                 </div>
                 <div class="col-lg-2 col-6">

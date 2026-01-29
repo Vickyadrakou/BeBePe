@@ -56,6 +56,18 @@
                     </div>
                 </div>
 
+                <div class="mb-4">
+                    <div class="form-check">
+                        <input type="checkbox" name="privacy_accepted" id="privacy_accepted" class="form-check-input" required>
+                        <label class="form-check-label small" for="privacy_accepted">
+                            J'ai lu et j'accepte la <a href="{{ route('privacy') }}" target="_blank" style="color: var(--primary-green); text-decoration: underline;">politique de confidentialité</a>
+                        </label>
+                        @error('privacy_accepted')
+                            <div class="text-danger small mt-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-cyan-block mb-3">
                     <i class="fas fa-user-plus me-2"></i> S'inscrire
                 </button>

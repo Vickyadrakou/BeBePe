@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'BeBePe - Plateforme de signalement, d'accompagnement et de lutte contre l'harcellent au TOGO')
+@section('title', "BeBePe - Plateforme de signalement, d'accompagnement et de lutte contre l'harcèlement au TOGO")
 
 @section('content')
     <!-- Hero Section Wrapper -->
@@ -82,6 +82,7 @@
                 <span class="hero-footer-item"><i class="fas fa-lock"></i> Données protégées</span>
                 <span class="hero-footer-item"><i class="fas fa-headset"></i> Support 24/7</span>
                 <span class="hero-footer-item"><i class="fas fa-user-friends"></i> Accompagnement expert</span>
+                <span class="hero-footer-item"><a href="{{ route('privacy') }}" class="text-white text-decoration-none"><i class="fas fa-shield-alt"></i> Politique de confidentialité</a></span>
             </div>
         </div>
 
@@ -503,12 +504,12 @@
                         <i class="fas fa-shield-alt me-2 text-primary"></i> BeBePe
                     </a>
                     <p class="mb-4">
-                        La première plateforme digitale dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
+                        La première plateforme digitale, privée et sécurisée, dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
                     </p>
                     <div class="d-flex">
                         <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
                         <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>

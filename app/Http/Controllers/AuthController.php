@@ -20,6 +20,10 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'privacy_accepted' => 'required|accepted',
+        ], [
+            'privacy_accepted.required' => 'Vous devez accepter la politique de confidentialité pour vous inscrire.',
+            'privacy_accepted.accepted' => 'Vous devez accepter la politique de confidentialité pour vous inscrire.',
         ]);
 
         $user = User::create([
