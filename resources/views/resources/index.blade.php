@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ressources Éducatives - BeBePe')
+@section('title', __('messages.educational_resources') . ' - BeBePe')
 
 @section('content')
 
@@ -10,7 +10,7 @@
                     <i class="fas fa-shield-alt fa-lg text-primary me-2" style="color: #4db6ac !important;"></i>
                     <div>
                         BeBePe
-                        <span>Plateforme de signalement et de lutte contre le harcèlement</span>
+                    <span>{{ __('messages.platform_description') }}</span>
                     </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -18,22 +18,22 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('messages.home') }}</a></li>
                         <li class="nav-item">
                             @auth
-                                <a class="nav-link" href="{{ route('report') }}">Signalement</a>
+                                <a class="nav-link" href="{{ route('report') }}">{{ __('messages.report') }}</a>
                             @else
-                                <a class="nav-link" href="{{ route('login') }}">Signalement</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('messages.report') }}</a>
                             @endauth
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('resources.index') }}">Ressources</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#services">À propos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('resources.index') }}">{{ __('messages.resources') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#services">{{ __('messages.about') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#contact">{{ __('messages.contact') }}</a></li>
                     </ul>
                 </div>
                 <div class="d-none d-lg-block">
                     <a href="{{ route('register') }}" class="btn btn-outline-custom">
-                        <i class="fas fa-check-shield me-2"></i> Signaler un cas
+                        <i class="fas fa-check-shield me-2"></i> {{ __('messages.signal_case') }}
                     </a>
                 </div>
             </div>
@@ -42,10 +42,10 @@
     <div class="container">
         <!-- Header -->
         <div class="text-center mb-5" style="margin-top: 100px;">
-            <span class="badge-custom badge-purple mb-2">Centre de Ressources</span>
-            <h1 class="display-5 fw-bold text-dark mb-3">Informez-vous et protégez-vous</h1>
+            <span class="badge-custom badge-purple mb-2">{{ __('messages.resources_center') }}</span>
+            <h1 class="display-5 fw-bold text-dark mb-3">{{ __('messages.inform_protect') }}</h1>
             <p class="lead text-muted mx-auto" style="max-width: 600px;">
-                Accédez à notre bibliothèque complète de guides, articles et vidéos pour comprendre et lutter contre le harcèlement sous toutes ses formes.
+                {{ __('messages.library_description') }}
             </p>
         </div>
 
@@ -82,14 +82,14 @@
                             
                             @if($resource->document_path)
                                 <a href="{{ asset('storage/' . $resource->document_path) }}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                    <i class="fas fa-eye me-1"></i> Voir la ressource
+                                    <i class="fas fa-eye me-1"></i> {{ __('messages.view_resource') }}
                                 </a>
                             @elseif($resource->video_path)
                                 <a href="{{ asset('storage/' . $resource->video_path) }}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill">
-                                    <i class="fas fa-play me-1"></i> Voir la vidéo
+                                    <i class="fas fa-play me-1"></i> {{ __('messages.view_video') }}
                                 </a>
                             @else
-                                <button class="btn btn-sm btn-light rounded-pill text-muted" disabled>Lecture seule</button>
+                                <button class="btn btn-sm btn-light rounded-pill text-muted" disabled>{{ __('messages.read_only') }}</button>
                             @endif
                         </div>
                     </div>
@@ -99,7 +99,7 @@
             <div class="col-12 text-center py-5">
                 <div class="bg-white p-5 rounded-3 shadow-sm d-inline-block">
                     <i class="fas fa-search fa-3x text-muted mb-3 opacity-25"></i>
-                    <h5 class="text-muted mb-0">Aucune ressource disponible pour le moment.</h5>
+                    <h5 class="text-muted mb-0">{{ __('messages.no_resources_found') }}</h5>
                 </div>
             </div>
             @endforelse
@@ -119,7 +119,7 @@
                         <i class="fas fa-shield-alt me-2 text-primary"></i> BeBePe
                     </a>
                     <p class="mb-4">
-                        La première plateforme digitale dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
+                        {{ __('messages.footer_description') }}
                     </p>
                     <div class="d-flex">
                         <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
@@ -129,32 +129,32 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h6 class="text-white fw-bold mb-3">Navigation</h6>
-                    <a href="{{ route('home') }}" class="footer-link">Accueil</a>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.navigation') }}</h6>
+                    <a href="{{ route('home') }}" class="footer-link">{{ __('messages.home') }}</a>
                     @auth
-                        <a href="{{ route('report') }}" class="footer-link">Signalement</a>
+                        <a href="{{ route('report') }}" class="footer-link">{{ __('messages.report') }}</a>
                     @else
-                        <a href="{{ route('login') }}" class="footer-link">Signalement</a>
+                        <a href="{{ route('login') }}" class="footer-link">{{ __('messages.report') }}</a>
                     @endauth
-                    <a href="{{ route('resources.index') }}" class="footer-link">Ressources</a>
-                    <a href="{{ route('login') }}" class="footer-link">Administration</a>
+                    <a href="{{ route('resources.index') }}" class="footer-link">{{ __('messages.resources') }}</a>
+                    <a href="{{ route('login') }}" class="footer-link">{{ __('messages.administration') }}</a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h6 class="text-white fw-bold mb-3">Légal</h6>
-                    <a href="#" class="footer-link">Mentions légales</a>
-                    <a href="#" class="footer-link">Confidentialité</a>
-                    <a href="#" class="footer-link">CGU</a>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.legal') }}</h6>
+                    <a href="#" class="footer-link">{{ __('messages.legal_mentions') }}</a>
+                    <a href="#" class="footer-link">{{ __('messages.privacy_policy') }}</a>
+                    <a href="{{ route('cgu') }}" class="footer-link">{{ __('messages.cgu.title') }}</a>
                 </div>
                 <!-- Removed Admin Column as per request (redundant/secure) or kept minimal -->
                 <div class="col-lg-4">
-                    <h6 class="text-white fw-bold mb-3">Contactez-nous</h6>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.contact_us_label') }}</h6>
                     <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Lomé, Togo</p>
                     <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> contact@bebepe08.tg</p>
                     <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 00 00 00 00</p>
                 </div>
             </div>
             <div class="border-top border-secondary mt-5 pt-4 text-center text-muted small">
-                © 2025 BeBePe Togo. Tous droits réservés.
+                © 2025 BeBePe Togo. {{ __('messages.all_rights_reserved') }}
             </div>
         </div>
     </footer>

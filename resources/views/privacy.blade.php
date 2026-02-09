@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Politique de Confidentialité - BeBePe')
+@section('title', __('messages.privacy.title') . ' - BeBePe')
 
 @section('content')
     <!-- Hero Section -->
@@ -11,7 +11,7 @@
                     <i class="fas fa-shield-alt fa-lg text-primary me-2" style="color: #0000 !important;"></i>
                     <div>
                         BeBePe
-                        <span>Plateforme de signalement et de lutte contre le harcèlement au TOGO</span>
+                        <span>{{ __('messages.platform_description') }}</span>
                     </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -19,15 +19,15 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('messages.home') }}</a></li>
                         <li class="nav-item">
                             @auth
-                                <a class="nav-link" href="{{ route('report') }}">Signalement</a>
+                                <a class="nav-link" href="{{ route('report') }}">{{ __('messages.report') }}</a>
                             @else
-                                <a class="nav-link" href="{{ route('login') }}">Signalement</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('messages.report') }}</a>
                             @endauth
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('resources.index') }}">Ressources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('resources.index') }}">{{ __('messages.resources') }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -35,10 +35,10 @@
 
         <div class="hero-content container text-center py-5">
             <h1 class="hero-title" style="font-size: 2.5rem;">
-                Politique de <em>Confidentialité</em>
+                {{ __('messages.privacy.title') }}
             </h1>
             <p class="hero-subtitle">
-                Votre vie privée est notre priorité absolue
+                {{ __('messages.privacy.subtitle') }}
             </p>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 <div class="col-lg-10">
                     <div class="bg-white rounded-4 shadow-sm p-4 p-md-5">
                         
-                        <p class="text-muted mb-4"><strong>Dernière mise à jour :</strong> 18 janvier 2026</p>
+                        <p class="text-muted mb-4"><strong>{{ __('messages.privacy.last_update') }}</strong> 18 janvier 2026</p>
 
                         <!-- Introduction -->
                         <div class="mb-5">
@@ -58,100 +58,92 @@
                             
                             </h2>
                             <p>
-                                BeBePe (ci-après "la Plateforme") est une initiative dédiée à la dénonciation, à l'accompagnement, et au lutte contre toutes formes d'harcèlement au Togo. 
-                                Lorsque vous utilisez nos services, vous nous accordez votre confiance pour le traitement de vos informations. Nous savons qu'il s'agit d'une lourde responsabilité, c'est pourquoi nous nous engageons   
-                                à protéger la confidentialité et la sécurité de vos données tout en vous permettant d'en garder le contrôle, en particulier lors des signalements des cas de harcèlement.
+                                {{ __('messages.privacy.intro_1') }}
                             </p>
                             <p>
-                                Ces règles de confidentialité vous expliquent vos informations que nous collectons et pourquoi, comment nous les utilisons, stockons et protégeons 
-                                conformément aux lois togolaises en vigueur sur la protection des données.
+                                {{ __('messages.privacy.intro_2') }}
                             </p>
                         </div>
 
                         <!-- Données collectées -->
+                        <!-- Données collectées -->
                         <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class=></i>Données que nous collectons
+                                <i class=></i>{{ __('messages.privacy.collected_title') }}
                             </h2>
                             
-                            <h5 class="fw-bold mt-4">1. Lors de l'inscription</h5>
+                            <h5 class="fw-bold mt-4">{{ __('messages.privacy.registration_title') }}</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2">Nom et prénom</li>
-                                <li class="mb-2">Adresse e-mail</li>
-                                <li class="mb-2">Mot de passe (chiffré)</li>
+                                @foreach(__('messages.privacy.registration_list') as $item)
+                                    <li class="mb-2">{{ $item }}</li>
+                                @endforeach
                             </ul>
 
-                            <h5 class="fw-bold mt-4">2. Lors d'un signalement</h5>
+                            <h5 class="fw-bold mt-4">{{ __('messages.privacy.report_title') }}</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2">Type de harcèlement signalé</li>
-                                <li class="mb-2">Description de l'incident</li>
-                                <li class="mb-2">Date et lieu de l'incident</li>
-                                <li class="mb-2">Informations sur le harceleur (si fournies)</li>
-                                <li class="mb-2">Preuves éventuelles (documents, captures d'écran)</li>
+                                @foreach(__('messages.privacy.report_list') as $item)
+                                    <li class="mb-2">{{ $item }}</li>
+                                @endforeach
                             </ul>
 
-                            <h5 class="fw-bold mt-4">3. Lors d'un contact</h5>
+                            <h5 class="fw-bold mt-4">{{ __('messages.privacy.contact_data_title') }}</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2">Nom complet</li>
-                                <li class="mb-2">Adresse e-mail</li>
-                                <li class="mb-2">Objet et contenu du message</li>
+                                @foreach(__('messages.privacy.contact_data_list') as $item)
+                                    <li class="mb-2">{{ $item }}</li>
+                                @endforeach
                             </ul>
                         </div>
 
                         <!-- Utilisation des données -->
                         <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas me-2"></i>Comment nous utilisons vos données
+                                <i class="fas me-2"></i>{{ __('messages.privacy.usage_title') }}
                             </h2>
-                            <p>Vos données personnelles sont utilisées exclusivement pour :</p>
+                            <p>{{ __('messages.privacy.usage_intro') }}</p>
                             <ul>
-                                <li class="mb-2">Traiter et suivre les signalements de harcèlement</li>
-                                <li class="mb-2">Vous accompagner et vous orienter vers les ressources appropriées</li>
-                                <li class="mb-2">Communiquer avec vous concernant votre dossier</li>
-                                <li class="mb-2">Améliorer nos services et notre plateforme</li>
-                                <li class="mb-2">Établir des statistiques anonymisées sur le harcèlement au Togo</li>
-                                <li class="mb-2">Répondre à vos demandes de contact</li>
+                                @foreach(__('messages.privacy.usage_list') as $item)
+                                    <li class="mb-2">{{ $item }}</li>
+                                @endforeach
                             </ul>
                             <div class="alert alert-warning border-0 rounded-3 mt-3">
                                 <i class="fas fa-exclamation-triangle me-2"></i>
-                                <strong>Important :</strong> Nous ne vendons, ne louons et ne partageons jamais vos données personnelles 
-                                avec des tiers à des fins commerciales.
+                                <strong>{{ __('messages.privacy.usage_important') }}</strong>
                             </div>
                         </div>
 
                         <!-- Protection des données -->
                         <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas me-2"></i>Protection de vos données
+                                <i class="fas me-2"></i>{{ __('messages.privacy.protection_title') }}
                             </h2>
-                            <p>Nous mettons en œuvre des mesures de sécurité rigoureuses pour protéger vos informations :</p>
+                            <p>{{ __('messages.privacy.protection_intro') }}</p>
                             <div class="row g-3 mt-3">
                                 <div class="col-md-6">
                                     <div class="p-3 bg-light rounded-3">
-                                        <i class="fas fa-lock text-primary me-2"></i>
-                                        <strong>Chiffrement SSL/TLS</strong>
-                                        <p class="small text-muted mb-0 mt-1">Toutes les communications sont sécurisées</p>
+                                        <i class="fas text-primary me-2"></i>
+                                        <strong>{{ __('messages.privacy.protection_items.ssl_title') }}</strong>
+                                        <p class="small text-muted mb-0 mt-1">{{ __('messages.privacy.protection_items.ssl_text') }}</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="p-3 bg-light rounded-3">
-                                        <i class="fas fa-key text-primary me-2"></i>
-                                        <strong>Mots de passe hachés</strong>
-                                        <p class="small text-muted mb-0 mt-1">Stockage sécurisé avec algorithme bcrypt</p>
+                                        <i class="fas text-primary me-2"></i>
+                                        <strong>{{ __('messages.privacy.protection_items.password_title') }}</strong>
+                                        <p class="small text-muted mb-0 mt-1">{{ __('messages.privacy.protection_items.password_text') }}</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="p-3 bg-light rounded-3">
-                                        <i class="fas fa-user-shield text-primary me-2"></i>
-                                        <strong>Accès restreint</strong>
-                                        <p class="small text-muted mb-0 mt-1">Seuls les administrateurs autorisés accèdent aux données</p>
+                                        <i class="fas text-primary me-2"></i>
+                                        <strong>{{ __('messages.privacy.protection_items.access_title') }}</strong>
+                                        <p class="small text-muted mb-0 mt-1">{{ __('messages.privacy.protection_items.access_text') }}</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="p-3 bg-light rounded-3">
-                                        <i class="fas fa-server text-primary me-2"></i>
-                                        <strong>Serveurs sécurisés</strong>
-                                        <p class="small text-muted mb-0 mt-1">Hébergement conforme aux normes de sécurité</p>
+                                        <i class="fas text-primary me-2"></i>
+                                        <strong>{{ __('messages.privacy.protection_items.server_title') }}</strong>
+                                        <p class="small text-muted mb-0 mt-1">{{ __('messages.privacy.protection_items.server_text') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,78 +152,75 @@
                         <!-- Conservation des données -->
                         <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas fa-clock text-primary me-2"></i>Conservation des données
+                                <i class="fas text-primary me-2"></i>{{ __('messages.privacy.retention_title') }}
                             </h2>
-                            <p>Nous conservons vos données personnelles selon les durées suivantes :</p>
+                            <p>{{ __('messages.privacy.retention_intro') }}</p>
                             <ul>
-                                <li class="mb-2"><strong>Données de compte :</strong> Jusqu'à la suppression de votre compte ou 3 ans après votre dernière activité</li>
-                                <li class="mb-2"><strong>Signalements :</strong> Pendant la durée nécessaire au traitement et au suivi, puis archivage sécurisé pendant 5 ans à des fins légales</li>
-                                <li class="mb-2"><strong>Messages de contact :</strong> 2 ans après la dernière communication</li>
+                                <li class="mb-2">{{ __('messages.privacy.retention_items.account') }}</li>
+                                <li class="mb-2">{{ __('messages.privacy.retention_items.reports') }}</li>
+                                <li class="mb-2">{{ __('messages.privacy.retention_items.contact') }}</li>
                             </ul>
                         </div>
  
                         <!-- Vos droits -->
                         <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas me-2"></i>Vos droits
+                                <i class="fas me-2"></i>{{ __('messages.privacy.rights_title') }}
                             </h2>
-                            <p>Conformément à la législation en vigueur, vous disposez des droits suivants :</p>
+                            <p>{{ __('messages.privacy.rights_intro') }}</p>
                             <div class="row g-3 mt-3">
                                 <div class="col-md-6">
                                     <div class="d-flex align-items-start">
-                                        <i class="fas fa-eye text-primary me-3 mt-1"></i>
+                                        <i class="fas text-primary me-3 mt-1"></i>
                                         <div>
-                                            <strong>Droit d'accès</strong>
-                                            <p class="small text-muted mb-0">Obtenir une copie de vos données personnelles</p>
+                                            <strong>{{ __('messages.privacy.rights_items.access_title') }}</strong>
+                                            <p class="small text-muted mb-0">{{ __('messages.privacy.rights_items.access_text') }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="d-flex align-items-start">
-                                        <i class="fas fa-edit text-primary me-3 mt-1"></i>
+                                        <i class="fas text-primary me-3 mt-1"></i>
                                         <div>
-                                            <strong>Droit de rectification</strong>
-                                            <p class="small text-muted mb-0">Corriger vos données inexactes ou incomplètes</p>
+                                            <strong>{{ __('messages.privacy.rights_items.rectification_title') }}</strong>
+                                            <p class="small text-muted mb-0">{{ __('messages.privacy.rights_items.rectification_text') }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="d-flex align-items-start">
-                                        <i class="fas fa-trash-alt text-primary me-3 mt-1"></i>
+                                        <i class="fas text-primary me-3 mt-1"></i>
                                         <div>
-                                            <strong>Droit à l'effacement</strong>
-                                            <p class="small text-muted mb-0">Demander la suppression de vos données</p>
+                                            <strong>{{ __('messages.privacy.rights_items.erasure_title') }}</strong>
+                                            <p class="small text-muted mb-0">{{ __('messages.privacy.rights_items.erasure_text') }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="d-flex align-items-start">
-                                        <i class="fas fa-ban text-primary me-3 mt-1"></i>
+                                        <i class="fas text-primary me-3 mt-1"></i>
                                         <div>
-                                            <strong>Droit d'opposition</strong>
-                                            <p class="small text-muted mb-0">Vous opposer au traitement de vos données</p>
+                                            <strong>{{ __('messages.privacy.rights_items.opposition_title') }}</strong>
+                                            <p class="small text-muted mb-0">{{ __('messages.privacy.rights_items.opposition_text') }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <p class="mt-4">
-                                Pour exercer ces droits, contactez-nous à : 
-                                <a href="mailto:v.adrakou@gmail.com" class="text-primary fw-bold">v.adrakou@gmail.com</a>
+                                {{ __('messages.privacy.rights_contact') }} 
+                                <a href="mailto:v.adrakou@gmail.com" class="text-primary">v.adrakou@gmail.com</a>
                             </p>
                         </div>
 
                         <!-- Anonymat -->
                         <div class="mb-3">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas me-2"></i>Anonymat et confidentialité des signalements
+                                <i class="fas me-2"></i>{{ __('messages.privacy.anonymity_title') }}
                             </h2>
                             <div class="alert alert-success border-0 rounded-3">
                                 <p class="mb-0">
                                     <i class="fas fa-check-circle me-2"></i>
-                                    <strong>Nous garantissons la confidentialité totale de vos signalements.</strong> 
-                                    Les informations que vous partagez ne seront jamais divulguées à des tiers sans votre 
-                                    consentement explicite, sauf obligation légale. L'identité des victimes est protégée 
-                                    à chaque étape du processus.
+                                    {{ __('messages.privacy.anonymity_text') }}
                                 </p>
                             </div>
                         </div>
@@ -239,14 +228,14 @@
                         <!-- Contact -->
                         <div class="mb-4">
                             <h2 class="h4 fw-bold text-dark mb-3">
-                                <i class="fas fa-envelope text-primary me-2"></i>Nous contacter
+                                <i class="fas fa-envelope-dark text-primary me-2"></i>{{ __('messages.privacy.contact_section_title') }}
                             </h2>
-                            <p>Pour toute question concernant cette politique de confidentialité ou vos données personnelles :</p>
+                            <p>{{ __('messages.privacy.contact_section_intro') }}</p>
                             <div class="bg-light p-4 rounded-3">
-                                <p class="mb-2"><i class="fas fa-building text-primary me-2"></i><strong>BeBePe - Plateforme de lutte contre le harcèlement</strong></p>
-                                <p class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i>Lomé, Togo</p>
-                                <p class="mb-2"><i class="fas fa-envelope text-primary me-2"></i>v.adrakou@gmail.com</p>
-                                <p class="mb-0"><i class="fas fa-phone text-primary me-2"></i>+228 91178479</p>
+                                <p class="mb-2"><i class="fas fa-building-primary-dark text-primary me-2"></i><strong>BeBePe - {{ __('messages.platform_description') }}</strong></p>
+                                <p class="mb-2"><i class="fas text-primary me-2"></i>Lomé, Togo</p>
+                                <p class="mb-2"><i class="fas text-primary me-2"></i>v.adrakou@gmail.com</p>
+                                <p class="mb-0"><i class="fas text-primary me-2"></i>+228 91178479</p>
                             </div>
                         </div>
 
@@ -254,8 +243,7 @@
                         <div class="border-top pt-4">
                             <p class="text-muted small mb-0">
                                 <i class="fas fa-sync-alt me-2"></i>
-                                Cette politique de confidentialité peut être mise à jour. Nous vous informerons de tout 
-                                changement significatif par e-mail ou via une notification sur la plateforme.
+                                {{ __('messages.privacy.modifications_text') }}
                             </p>
                         </div>
 
@@ -271,36 +259,36 @@
             <div class="row gy-5">
                 <div class="col-lg-4">
                     <a href="{{ route('home') }}" class="footer-brand">
-                        <i class="fas fa-shield-alt me-2 text-primary"></i> BeBePe
+                        <i class="fas me-2 text-primary"></i> BeBePe
                     </a>
                     <p class="mb-4">
-                        La première plateforme digitale, privée, dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
+                        {{ __('messages.footer_description') }}
                     </p>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h6 class="text-white fw-bold mb-3">Navigation</h6>
-                    <a href="{{ route('home') }}" class="footer-link">Accueil</a>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.navigation') }}</h6>
+                    <a href="{{ route('home') }}" class="footer-link">{{ __('messages.home') }}</a>
                     @auth
-                        <a href="{{ route('report') }}" class="footer-link">Signalement</a>
+                        <a href="{{ route('report') }}" class="footer-link">{{ __('messages.report') }}</a>
                     @else
-                        <a href="{{ route('login') }}" class="footer-link">Signalement</a>
+                        <a href="{{ route('login') }}" class="footer-link">{{ __('messages.report') }}</a>
                     @endauth
-                    <a href="{{ route('resources.index') }}" class="footer-link">Ressources</a>
+                    <a href="{{ route('resources.index') }}" class="footer-link">{{ __('messages.resources') }}</a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h6 class="text-white fw-bold mb-3">Légal</h6>
-                    <a href="{{ route('privacy') }}" class="footer-link">Confidentialité</a>
-                    <a href="{{ route('home') }}" class="footer-link">CGU</a>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.legal') }}</h6>
+                    <a href="{{ route('privacy') }}" class="footer-link">{{ __('messages.privacy.title') }}</a>
+                    <a href="{{ route('cgu') }}" class="footer-link">{{ __('messages.cgu.title') }}</a>
                 </div>
                 <div class="col-lg-4">
-                    <h6 class="text-white fw-bold mb-3">Contactez-nous</h6>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Lomé, Togo</p>
-                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> v.adrakou@gmail.com</p>
-                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 91178479</p>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.contact_us_label') }}</h6>
+                    <p class="mb-2"><i class="fas me-2 text-primary"></i> Lomé, Togo</p>
+                    <p class="mb-2"><i class="fas me-2 text-primary"></i> v.adrakou@gmail.com</p>
+                    <p class="mb-0"><i class="fas me-2 text-primary"></i> +228 91178479</p>
                 </div>
             </div>
             <div class="border-top border-secondary mt-5 pt-4 text-center text-muted small">
-                © 2025 BeBePe. Tous droits réservés.
+                © 2025 BeBePe. {{ __('messages.all_rights_reserved') }}
             </div>
         </div>
     </footer>

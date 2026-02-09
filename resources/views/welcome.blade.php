@@ -13,7 +13,7 @@
                     <i class="fas fa-shield-alt fa-lg text-primary me-2" style="color: #4db6ac !important;"></i>
                     <div>
                         BeBePe
-                        <span>Plateforme de signalement et de lutte contre le harcèlement au TOGO</span>
+                        <span>{{ __('messages.platform_description') }}</span>
                     </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -21,26 +21,35 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('messages.home') }}</a></li>
                         <li class="nav-item">
                             @auth
-                                <a class="nav-link" href="{{ route('report') }}">Signalement</a>
+                                <a class="nav-link" href="{{ route('report') }}">{{ __('messages.report') }}</a>
                             @else
-                                <a class="nav-link" href="{{ route('login') }}">Signalement</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('messages.report') }}</a>
                             @endauth
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('resources.index') }}">Ressources</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">À propos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('resources.index') }}">{{ __('messages.resources') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">{{ __('messages.about') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacts">{{ __('messages.contact') }}</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe me-1"></i> {{ strtoupper(app()->getLocale()) }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('lang.swap', 'fr') }}">Français</a></li>
+                                <li><a class="dropdown-item" href="{{ route('lang.swap', 'en') }}">English</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 @auth
                     <a href="{{ route('report') }}" class="btn btn-outline-custom">
-                        <i class="fas fa-exclamation-triangle me-2"></i> Signaler un cas
+                        <i class="fas fa-exclamation-triangle me-2"></i> {{ __('messages.signal_case') }}
                     </a>
                 @else
                     <a href="{{ route('login') }}" class="btn btn-outline-custom">
-                        <i class="fas fa-exclamation-triangle me-2"></i> Signaler un cas
+                        <i class="fas fa-exclamation-triangle me-2"></i> {{ __('messages.signal_case') }}
                     </a>
                 @endauth
             </div>
@@ -50,28 +59,28 @@
         <div class="hero-content container">
             <div>
                 <h1 class="hero-title">
-                    Ensemble contre
-                    <em>le harcèlement</em>
+                    {{ __('messages.hero_title') }}
+                    <em>{{ __('messages.hero_title_emphasis') }}</em>
                 </h1>
                 <p class="hero-subtitle">
-                    Une plateforme sécurisée pour signaler, accompagner et prévenir toutes les formes de harcèlement au Togo. Votre sécurité, notre priorité.
+                    {{ __('messages.hero_subtitle') }}
                 </p>
                 
                 <div class="d-flex justify-content-center gap-3 mt-5">
                     <!-- Blank white pill button as in mockup -->
                     @auth
-                        <a href="{{ route('report') }}" class="btn btn-white-pill" style="min-width: 180px; color: black; text-decoration: none;">Signaler un cas</a>
+                        <a href="{{ route('report') }}" class="btn btn-white-pill" style="min-width: 180px; color: black; text-decoration: none;">{{ __('messages.signal_case') }}</a>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-white-pill" style="min-width: 180px; color: black; text-decoration: none;">Signaler un cas</a>
+                        <a href="{{ route('login') }}" class="btn btn-white-pill" style="min-width: 180px; color: black; text-decoration: none;">{{ __('messages.signal_case') }}</a>
                     @endauth
                     
                     <a href="#" class="btn btn-outline-pill">
-                        <i class="fas fa-info-circle me-2"></i> En savoir plus
+                        <i class="fas fa-info-circle me-2"></i> {{ __('messages.learn_more') }}
                     </a>
                 </div>
 
                 <div class="mt-5 text-center">
-                    <div class="mb-2"><i class="fas fa-shield-alt me-2"></i> 100% confidentiel et anonyme</div>
+                    <div class="mb-2"><i class="fas fa-shield-alt me-2"></i> {{ __('messages.confidential_anonymous') }}</div>
                 </div>
             </div>
         </div>
@@ -79,10 +88,10 @@
         <!-- Footer Info -->
         <div class="hero-footer text-center">
             <div class="container">
-                <span class="hero-footer-item"><i class="fas fa-lock"></i> Données protégées</span>
-                <span class="hero-footer-item"><i class="fas fa-headset"></i> Support 24/7</span>
-                <span class="hero-footer-item"><i class="fas fa-user-friends"></i> Accompagnement expert</span>
-                <span class="hero-footer-item"><a href="{{ route('privacy') }}" class="text-white text-decoration-none"><i class="fas fa-shield-alt"></i> Politique de confidentialité</a></span>
+                <span class="hero-footer-item"><i class="fas fa-lock"></i> {{ __('messages.data_protected') }}</span>
+                <span class="hero-footer-item"><i class="fas fa-headset"></i> {{ __('messages.support_24_7') }}</span>
+                <span class="hero-footer-item"><i class="fas fa-user-friends"></i> {{ __('messages.expert_support') }}</span>
+                <span class="hero-footer-item"><a href="{{ route('privacy') }}" class="text-white text-decoration-none"><i class="fas fa-shield-alt"></i> {{ __('messages.privacy_policy') }}</a></span>
             </div>
         </div>
 
@@ -91,28 +100,28 @@
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
-            <h2 class="stats-title">Notre impact en chiffres</h2>
+            <h2 class="stats-title">{{ __('messages.impact_title') }}</h2>
             <p class="stats-subtitle">
-                Depuis notre création, nous avons accompagné des centaines de victimes vers un avenir plus sûr et serein.
+                {{ __('messages.impact_subtitle') }}
             </p>
 
             <div class="row g-4 justify-content-center">
                 <div class="col-md-4">
                     <div class="stat-card-custom">
                         <div class="stat-number-custom">1,250+</div>
-                        <div class="stat-label-custom">Victimes accompagnées</div>
+                        <div class="stat-label-custom">{{ __('messages.victims_accompanied') }}</div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="stat-card-custom">
                         <div class="stat-number-custom">96%</div>
-                        <div class="stat-label-custom">Taux de résolution</div>
+                        <div class="stat-label-custom">{{ __('messages.resolution_rate') }}</div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="stat-card-custom">
                         <div class="stat-number-custom">24/7</div>
-                        <div class="stat-label-custom">Support disponible</div>
+                        <div class="stat-label-custom">{{ __('messages.support_available') }}</div>
                     </div>
                 </div>
             </div>
@@ -121,11 +130,11 @@
             <div class="status-pill">
                 <div class="d-flex align-items-center">
                     <span class="status-dot"></span>
-                    <strong>Système opérationnel</strong>
+                    <strong>{{ __('messages.system_operational') }}</strong>
                 </div>
                 <div class="status-divider"></div>
                 <div>
-                    Dernière mise à jour : <strong>Aujourd'hui, 09:30</strong>
+                    {{ __('messages.last_update') }} : <strong>{{ __('messages.today') }}, 09:30</strong>
                 </div>
             </div>
         </div>
@@ -135,9 +144,9 @@
     <section id="services" class="services-section">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="section-label">NOS SERVICES</span>
-                <h2 class="stats-title mt-3">Un accompagnement complet</h2>
-                <p class="stats-subtitle">Nous offrons une gamme de services pour soutenir les victimes et prévenir le harcèlement sous toutes ses formes.</p>
+                <span class="section-label">{{ __('messages.our_services') }}</span>
+                <h2 class="stats-title mt-3">{{ __('messages.complete_support') }}</h2>
+                <p class="stats-subtitle">{{ __('messages.services_subtitle') }}</p>
             </div>
 
             <div class="row g-4">
@@ -147,9 +156,9 @@
                         <div class="service-icon-wrapper icon-pink">
                             <i class="fas fa-bullhorn"></i>
                         </div>
-                        <h4 class="service-title">Signalement Sécurisé</h4>
-                        <p class="service-text">Signalez des incidents en toute sécurité et confidentialité via notre plateforme chiffrée.</p>
-                        <a href="#" class="service-link">Commencer <i class="fas fa-arrow-right ms-2"></i></a>
+                        <h4 class="service-title">{{ __('messages.secure_reporting') }}</h4>
+                        <p class="service-text">{{ __('messages.secure_reporting_text') }}</p>
+                        <a href="#" class="service-link">{{ __('messages.start') }} <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
 
@@ -159,9 +168,9 @@
                         <div class="service-icon-wrapper icon-green">
                             <i class="fas fa-user-md"></i>
                         </div>
-                        <h4 class="service-title">Soutien Psychologique</h4>
-                        <p class="service-text">Accédez à un réseau de professionnels de santé mentale pour un accompagnement personnalisé.</p>
-                        <a href="#" class="service-link">Trouver de l'aide <i class="fas fa-arrow-right ms-2"></i></a>
+                        <h4 class="service-title">{{ __('messages.psychological_support') }}</h4>
+                        <p class="service-text">{{ __('messages.psychological_support_text') }}</p>
+                        <a href="#" class="service-link">{{ __('messages.find_help') }} <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
 
@@ -171,9 +180,9 @@
                         <div class="service-icon-wrapper icon-blue">
                             <i class="fas fa-gavel"></i>
                         </div>
-                        <h4 class="service-title">Aide Juridique</h4>
-                        <p class="service-text">Recevez des conseils juridiques gratuits et une orientation vers les instances compétentes.</p>
-                        <a href="#" class="service-link">Consulter un expert <i class="fas fa-arrow-right ms-2"></i></a>
+                        <h4 class="service-title">{{ __('messages.legal_aid') }}</h4>
+                        <p class="service-text">{{ __('messages.legal_aid_text') }}</p>
+                        <a href="#" class="service-link">{{ __('messages.consult_expert') }} <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
 
@@ -183,9 +192,9 @@
                         <div class="service-icon-wrapper icon-yellow">
                             <i class="fas fa-book-open"></i>
                         </div>
-                        <h4 class="service-title">Ressources Éducatives</h4>
-                        <p class="service-text">Accédez à notre bibliothèque de guides, articles et formations sur la prévention.</p>
-                        <a href="#" class="service-link">Explorer <i class="fas fa-arrow-right ms-2"></i></a>
+                        <h4 class="service-title">{{ __('messages.educational_resources') }}</h4>
+                        <p class="service-text">{{ __('messages.educational_resources_text') }}</p>
+                        <a href="#" class="service-link">{{ __('messages.explore') }} <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -195,11 +204,11 @@
     <!-- Help Banner -->
     <section class="container">
         <div class="help-banner">
-            <h2 class="help-title">Besoin d'une aide immédiate ?</h2>
-            <p class="help-text">Si vous êtes en danger immédiat ou avez besoin d'une assistance urgente, n'hésitez pas à nous contacter. Nous sommes là pour vous.</p>
+            <h2 class="help-title">{{ __('messages.immediate_help_title') }}</h2>
+            <p class="help-text">{{ __('messages.immediate_help_text') }}</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#" class="btn btn-light rounded-pill px-4 py-3 fw-bold text-teal"><i class="fas fa-phone-alt me-2"></i> Appeler le 117</a>
-                <a href="#" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold"><i class="fas fa-phone-alt me-2"></i> Appeler le 118</a>
+                <a href="#" class="btn btn-light rounded-pill px-4 py-3 fw-bold text-teal"><i class="fas fa-phone-alt me-2"></i> {{ __('messages.call') }} 117</a>
+                <a href="#" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold"><i class="fas fa-phone-alt me-2"></i> {{ __('messages.call') }} 118</a>
             </div>
         </div>
     </section>
@@ -208,9 +217,9 @@
     <section class="testimonials-section">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="section-label" style="background-color: #e3f2fd; color: #0984e3;">TÉMOIGNAGES</span>
-                <h2 class="stats-title mt-3">Ils nous font confiance</h2>
-                <p class="stats-subtitle">Découvrez comment BeBePe a aidé des personnes à retrouver la paix et la sécurité.</p>
+                <span class="section-label" style="background-color: #e3f2fd; color: #0984e3;">{{ __('messages.testimonials_label') }}</span>
+                <h2 class="stats-title mt-3">{{ __('messages.testimonials_title') }}</h2>
+                <p class="stats-subtitle">{{ __('messages.testimonials_subtitle') }}</p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -273,11 +282,11 @@
         <div class="container">
             <div class="section-header-custom">
                 <div>
-                    <span class="section-label" style="background-color: #fff8e1; color: #f1c40f;">INFORMER & PRÉVENIR</span>
-                    <h2 class="stats-title mt-3 mb-0">Ressources Essentielles</h2>
+                    <span class="section-label" style="background-color: #fff8e1; color: #f1c40f;">{{ __('messages.inform_prevent') }}</span>
+                    <h2 class="stats-title mt-3 mb-0">{{ __('messages.essential_resources') }}</h2>
                 </div>
                 <a href="{{ route('resources.index') }}" class="btn btn-outline-custom" style="color: var(--primary-dark); border-color: #ddd;">
-                    Voir toutes les ressources <i class="fas fa-arrow-right ms-2"></i>
+                    {{ __('messages.see_all_resources') }} <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
 
@@ -292,18 +301,18 @@
                             <h3 class="resource-title-large">{{ Str::limit($featuredResource->title, 50) }}</h3>
                             <p class="mb-4 text-white-50">{{ Str::limit($featuredResource->summary, 100) }}</p>
                             @if($featuredResource->document_path)
-                                <a href="{{ asset('storage/' . $featuredResource->document_path) }}" target="_blank" class="btn btn-teal align-self-start">Lire le guide</a>
+                                <a href="{{ asset('storage/' . $featuredResource->document_path) }}" target="_blank" class="btn btn-teal align-self-start">{{ __('messages.read_guide') }}</a>
                             @elseif($featuredResource->video_path)
-                                 <a href="{{ asset('storage/' . $featuredResource->video_path) }}" target="_blank" class="btn btn-teal align-self-start">Voir la vidéo</a>
+                                 <a href="{{ asset('storage/' . $featuredResource->video_path) }}" target="_blank" class="btn btn-teal align-self-start">{{ __('messages.watch_video') }}</a>
                             @else
-                                <a href="#" class="btn btn-teal align-self-start">Consulter</a>
+                                <a href="#" class="btn btn-teal align-self-start">{{ __('messages.consult') }}</a>
                             @endif
                         </div>
                     </div>
                     @else
                         <div class="text-center py-5 bg-light rounded">
                             <i class="fas fa-book-reader fa-3x text-muted mb-3 opacity-25"></i>
-                            <h5 class="text-muted">Aucune ressource à la une pour le moment.</h5>
+                            <h5 class="text-muted">{{ __('messages.no_featured_resource') }}</h5>
                         </div>
                     @endif
                 </div>
@@ -337,7 +346,7 @@
                     </div>
                     @empty
                         <div class="text-center py-4 bg-light rounded mt-3">
-                            <p class="text-muted mb-0">Plus de ressources bientôt disponibles.</p>
+                            <p class="text-muted mb-0">{{ __('messages.more_resources_soon') }}</p>
                         </div>
                     @endforelse
                 </div>
@@ -350,16 +359,16 @@
         <div class="container">
             <div class="community-banner">
                 <h2 class="community-title">
-                    Un engagement <em>collectif</em>
+                    {{ __('messages.collective_commitment') }} <em>{{ __('messages.collective_commitment_emphasis') }}</em>
                 </h2>
                 <p class="community-text">
-                    Rejoignez une communauté bienveillante qui œuvre chaque jour pour un environnement sans violence. Ensemble, faisons la différence.
+                    {{ __('messages.community_text') }}
                 </p>
                 
                 <div class="community-features">
-                    <div class="community-feature-item"><i class="fas fa-check text-accent"></i> Respect mutuel</div>
-                    <div class="community-feature-item"><i class="fas fa-check text-accent"></i> Solidarité</div>
-                    <div class="community-feature-item"><i class="fas fa-check text-accent"></i> Action concrète</div>
+                    <div class="community-feature-item"><i class="fas fa-check text-accent"></i> {{ __('messages.mutual_respect') }}</div>
+                    <div class="community-feature-item"><i class="fas fa-check text-accent"></i> {{ __('messages.solidarity') }}</div>
+                    <div class="community-feature-item"><i class="fas fa-check text-accent"></i> {{ __('messages.concrete_action') }}</div>
                 </div>
             </div>
 
@@ -373,9 +382,9 @@
                                 <div class="cc-icon-wrapper text-primary">
                                     <i class="fas fa-user-shield"></i>
                                 </div>
-                                <h3 class="cc-title">Suivi Expert</h3>
+                                <h3 class="cc-title">{{ __('messages.expert_followup') }}</h3>
                                 <p class="cc-text">
-                                    Nos spécialistes analysent chaque signalement avec soin et vous apportent une réponse adaptée et personnalisée.
+                                    {{ __('messages.expert_followup_text') }}
                     
                                 </p>
                             </div>
@@ -387,9 +396,9 @@
                                 <div class="cc-icon-wrapper text-success">
                                     <i class="fas fa-mask"></i>
                                 </div>
-                                <h3 class="cc-title">Anonymat Total</h3>
+                                <h3 class="cc-title">{{ __('messages.total_anonymity') }}</h3>
                                 <p class="cc-text">
-                                    Votre identité est protégée. Vous pouvez signaler et échanger en toute sécurité sans craindre d'être exposé.
+                                    {{ __('messages.total_anonymity_text') }}
                                 </p>
                             </div>
                         </div>
@@ -403,10 +412,10 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
-                    <span class="section-label" style="background-color: #fff8e1; color: #f1c40f;">CONTACTEZ-NOUS</span>
-                    <h2 class="stats-title mt-3">Besoin d'échanger ?</h2>
+                    <span class="section-label" style="background-color: #fff8e1; color: #f1c40f;">{{ __('messages.contact_us_label') }}</span>
+                    <h2 class="stats-title mt-3">{{ __('messages.need_to_talk') }}</h2>
                     <p class="stats-subtitle text-start ms-0 mb-4">
-                        Notre équipe est à votre écoute pour toute question, suggestion ou besoin d'accompagnement spécifique.
+                        {{ __('messages.contact_subtitle') }}
                     </p>
                     
                     <div class="contact-info-list mt-5">
@@ -415,7 +424,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="ms-3">
-                                <h6 class="mb-0 fw-bold">Notre Siège</h6>
+                                <h6 class="mb-0 fw-bold">{{ __('messages.our_headquarters') }}</h6>
                                 <p class="text-muted mb-0">Lomé, Togo</p>
                             </div>
                         </div>
@@ -425,7 +434,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="ms-3">
-                                <h6 class="mb-0 fw-bold">Email</h6>
+                                <h6 class="mb-0 fw-bold">{{ __('messages.email') }}</h6>
                                 <p class="text-muted mb-0">v.adrakou@gmail.com</p>
                             </div>
                         </div>
@@ -435,7 +444,7 @@
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="ms-3">
-                                <h6 class="mb-0 fw-bold">Téléphone</h6>
+                                <h6 class="mb-0 fw-bold">{{ __('messages.phone') }}</h6>
                                 <p class="text-muted mb-0">+228 91178479</p>
                             </div>
                         </div>
@@ -455,36 +464,36 @@
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold small text-muted">NOM COMPLET</label>
-                                    <input type="text" name="name" class="form-control form-control-custom @error('name') is-invalid @enderror" placeholder="Votre nom" value="{{ old('name') }}" required>
+                                    <label class="form-label fw-bold small text-muted">{{ __('messages.full_name') }}</label>
+                                    <input type="text" name="name" class="form-control form-control-custom @error('name') is-invalid @enderror" placeholder="{{ __('messages.placeholder_name') }}" value="{{ old('name') }}" required>
                                     @error('name')
                                         <div class="invalid-feedback text-start">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold small text-muted">ADRESSE EMAIL</label>
+                                    <label class="form-label fw-bold small text-muted">{{ __('messages.address_email') }}</label>
                                     <input type="email" name="email" class="form-control form-control-custom @error('email') is-invalid @enderror" placeholder="email@exemple.com" value="{{ old('email') }}" required>
                                     @error('email')
                                         <div class="invalid-feedback text-start">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold small text-muted">OBJET</label>
-                                    <input type="text" name="subject" class="form-control form-control-custom @error('subject') is-invalid @enderror" placeholder="Sujet de votre message" value="{{ old('subject') }}" required>
+                                    <label class="form-label fw-bold small text-muted">{{ __('messages.subject') }}</label>
+                                    <input type="text" name="subject" class="form-control form-control-custom @error('subject') is-invalid @enderror" placeholder="{{ __('messages.placeholder_subject') }}" value="{{ old('subject') }}" required>
                                     @error('subject')
                                         <div class="invalid-feedback text-start">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold small text-muted">MESSAGE</label>
-                                    <textarea name="message" class="form-control form-control-custom @error('message') is-invalid @enderror" rows="5" placeholder="Comment pouvons-nous vous aider ?" required>{{ old('message') }}</textarea>
+                                    <label class="form-label fw-bold small text-muted">{{ __('messages.message') }}</label>
+                                    <textarea name="message" class="form-control form-control-custom @error('message') is-invalid @enderror" rows="5" placeholder="{{ __('messages.placeholder_message') }}" required>{{ old('message') }}</textarea>
                                     @error('message')
                                         <div class="invalid-feedback text-start">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-12 mt-4 text-center">
                                     <button type="submit" class="btn btn-teal rounded-pill px-5 py-3 fw-bold w-100">
-                                        Envoyer le message <i class="fas fa-paper-plane ms-2"></i>
+                                        {{ __('messages.send_message') }} <i class="fas fa-paper-plane ms-2"></i>
                                     </button>
                                 </div>
                             </div>
@@ -504,7 +513,7 @@
                         <i class="fas fa-shield-alt me-2 text-primary"></i> BeBePe
                     </a>
                     <p class="mb-4">
-                        La première plateforme digitale, privée et sécurisée, dédiée à la lutte contre le harcèlement au Togo. Brisons le silence ensemble.
+                        {{ __('messages.footer_description') }}
                     </p>
                     <div class="d-flex">
                         <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
@@ -514,32 +523,32 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h6 class="text-white fw-bold mb-3">Navigation</h6>
-                    <a href="{{ route('home') }}" class="footer-link">Accueil</a>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.navigation') }}</h6>
+                    <a href="{{ route('home') }}" class="footer-link">{{ __('messages.home') }}</a>
                     @auth
-                        <a href="{{ route('report') }}" class="footer-link">Signalement</a>
+                        <a href="{{ route('report') }}" class="footer-link">{{ __('messages.report') }}</a>
                     @else
-                        <a href="{{ route('login') }}" class="footer-link">Signalement</a>
+                        <a href="{{ route('login') }}" class="footer-link">{{ __('messages.report') }}</a>
                     @endauth
-                    <a href="{{ route('resources.index') }}" class="footer-link">Ressources</a>
-                    <a href="{{ route('login') }}" class="footer-link">Administration</a>
+                    <a href="{{ route('resources.index') }}" class="footer-link">{{ __('messages.resources') }}</a>
+                    <a href="{{ route('login') }}" class="footer-link">{{ __('messages.administration') }}</a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <h6 class="text-white fw-bold mb-3">Légal</h6>
-                    <a href="#" class="footer-link">Mentions légales</a>
-                    <a href="{{ route('privacy') }}" class="footer-link">Confidentialité</a>
-                    <a href="{{ route('cgu') }}" class="footer-link">CGU</a>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.legal') }}</h6>
+                    <a href="#" class="footer-link">{{ __('messages.legal_mentions') }}</a>
+                    <a href="{{ route('privacy') }}" class="footer-link">{{ __('messages.privacy_policy') }}</a>
+                    <a href="{{ route('cgu') }}" class="footer-link">{{ __('messages.cgu.title') }}</a>
                 </div>
                 <!-- Removed Admin Column as per request (redundant/secure) or kept minimal -->
                 <div class="col-lg-4">
-                    <h6 class="text-white fw-bold mb-3">Contactez-nous</h6>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Lomé, Togo</p>
-                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> v.adrakou@gmail.com</p>
-                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> +228 91178479</p>
+                    <h6 class="text-white fw-bold mb-3">{{ __('messages.contact_us_label') }}</h6>
+                    <p class="mb-2"><i class="fas me-2 text-primary"></i> Lomé, Togo</p>
+                    <p class="mb-2"><i class="fas me-2 text-primary"></i> v.adrakou@gmail.com</p>
+                    <p class="mb-0"><i class="fas me-2 text-primary"></i> (+228) 91178479</p>
                 </div>
             </div>
             <div class="border-top border-secondary mt-5 pt-4 text-center text-muted small">
-                © 2025 BeBePe. Tous droits réservés.
+                © 2025 BeBePe. {{ __('messages.all_rights_reserved') }}
             </div>
         </div>
     </footer>

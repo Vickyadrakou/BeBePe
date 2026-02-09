@@ -43,6 +43,11 @@
                     </div>
                 @endif
 
+                <div class="mb-3">
+                    <a href="{{ route('home') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i> Retour à l'accueil
+                    </a>
+                </div>
                 <div class="report-card">
                     <h2 class="stats-title text-center mb-4">Formulaire de Signalement</h2>
                     <p class="text-center text-muted mb-5">
@@ -102,7 +107,6 @@
                                 <label class="form-label-custom">Fréquence *</label>
                                 <select name="frequency" class="form-select form-select-custom" required>
                                     <option value="" selected disabled>Choisir une fréquence</option>
-                                    <option value="Une seule fois">Une seule fois</option>
                                     <option value="Plusieurs fois">Plusieurs fois</option>
                                     <option value="Quotidien">Quotidien</option>
                                     <option value="Hebdomadaire">Hebdomadaire</option>

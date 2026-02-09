@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AdminController;
+
+Route::get('lang/{locale}', [App\Http\Controllers\LanguageController::class, 'swap'])->name('lang.swap');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/resources', [App\Http\Controllers\ResourceController::class, 'index'])->name('resources.index');
